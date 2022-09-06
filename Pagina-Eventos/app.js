@@ -126,7 +126,7 @@ function createCards(product){
                 btnAdd.textContent='Cancelar'
                 personasCard.textContent = personas+cantidad_personas
             }else{
-                alert('pendejo')
+                alert('No se inscribio!!!')
                 z--
             }
         }
