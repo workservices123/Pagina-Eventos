@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="img/REAL STATE SERVICES.png" type="image/x-icon"> -->
+    <title>Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="logo">
+        </div>
+        <!-- <h1>Eventos.com</h1> -->
+        <!-- <img src="/images/calendario.png" alt="logo" class="logo"> -->
+        <!-- <p id="p-conter">0</p> -->
+    </header>
+    <div class="padre-anuncios"></div>
+    <nav class="nav1">
+        <!-- <i><a href="indexLogin.html"><img  src="https://res.cloudinary.com/dasuy0gun/image/upload/v1658781217/imagenes%20carrito%20de%20compras/btnSalir_rgvmx5.png" alt=""></a></i> -->
+        <i><a href="indexPrincipal.html"><img  src="https://res.cloudinary.com/dasuy0gun/image/upload/v1658781216/imagenes%20carrito%20de%20compras/btnInicio_xes8sc.png" alt=""></a></i>
+    </nav>
+    
+    <div class="anuncios">
+    <div class="container-products">
+        <div class="modal"> 
+            <button id="close-modal">X</button>
+            <input type="text" id="contacto" placeholder="Contacto">
+            <input type="text" id="Descripcion" placeholder="Descripcion">
+            <input type="datetime-local" id="Fecha" placeholder="Fecha">
+            <input type="file" id="new-image" >
+            <input type="text" id="Lugar" placeholder="Lugar">
+            <input type="text" id="nombre" placeholder="nombre">
+            <input type="Number" id="Npersonas" placeholder="Numero de personas">
+            <button id="btn-new-create">create new object</button>
+        </div>
+        <!-- este select se debe renderizar por javaScript consumiendo el objeto -->
+        <select name="products" id="select-products">
+            <option value="">SELECT ONE OPTION</option>
+        </select>
+
+        
+        <button id="btn-create">Create new product</button>
+    </div>
+    
+    <main id="container-cards"></main>
+    <div class="overlay " id="overlay">
+        <div class="popup" id="popup">
+        <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
+        <div class="shoppingCart">
+            <!-- <i class="fas fa-shopping-cart"></i> -->
+            <h3>Carrito</h3>
+        </div>
+        <div class="principal-container shoppingCart-container" >
+        </div><p id="total"></p>
+        </div>
+    </div>
+    
+</div>
+</div>
+    <script src="app.js" type="module"></script>
+    <!-- <script src="products.js"></script> -->
+    <script src="firebase.js" type="module"></script>
+</body>
+</html>
