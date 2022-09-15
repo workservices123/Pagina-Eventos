@@ -13,18 +13,41 @@
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div id="logo">
+    <header class="header">
+		<div class="container">
+		<div class="btn-menu">
+			<label for="btn-menu">☰</label>
+		</div>
+			<div class="logo">
+				<h1>LogotipoEmpresa</h1>
+			</div>
+			<nav class="menu">
+				<a href="#">Inicio</a>
+				<a href="#">Nosotros</a>
+				<a href="#">Blog</a>
+				<a href="#">Contacto</a>
+			</nav>
+		</div>
+	</header>
+
+    <div class="capa"></div>
+    <!--	--------------->
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <a href="#">Portafolio</a>
+                <a href="#">Servicios</a>
+                <a href="#">Suscribirse</a>
+                <a href="#">Facebook</a>
+                <a href="#">Youtube</a>
+                <a href="#">Instagram</a>
+            </nav>
+            <label for="btn-menu">✖️</label>
         </div>
-        <!-- <h1>Eventos.com</h1> -->
-        <!-- <img src="/images/calendario.png" alt="logo" class="logo"> -->
-        <!-- <p id="p-conter">0</p> -->
-    </header>
+    </div>
+
     <div class="padre-anuncios"></div>
-    <nav class="nav1">
-        <!-- <i><a href="indexLogin.html"><img  src="https://res.cloudinary.com/dasuy0gun/image/upload/v1658781217/imagenes%20carrito%20de%20compras/btnSalir_rgvmx5.png" alt=""></a></i> -->
-        <i><a href="indexPrincipal.html"><img  src="https://res.cloudinary.com/dasuy0gun/image/upload/v1658781216/imagenes%20carrito%20de%20compras/btnInicio_xes8sc.png" alt=""></a></i>
-    </nav>
     
     <div class="anuncios">
     <div class="container-products">
@@ -37,7 +60,7 @@
             <input type="text" id="Lugar" placeholder="Lugar">
             <input type="text" id="nombre" placeholder="nombre">
             <input type="Number" id="Npersonas" placeholder="Numero de personas">
-            <button id="btn-new-create">create new object</button>
+            <button id="btn-new-create">Crear producto</button>
         </div>
         <!-- este select se debe renderizar por javaScript consumiendo el objeto -->
         <select name="products" id="select-products">
@@ -45,21 +68,11 @@
         </select>
 
         
-        <button id="btn-create">Create new product</button>
+        <button id="btn-create">Añadir Anuncio</button>
     </div>
     
     <main id="container-cards"></main>
-    <div class="overlay " id="overlay">
-        <div class="popup" id="popup">
-        <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
-        <div class="shoppingCart">
-            <!-- <i class="fas fa-shopping-cart"></i> -->
-            <h3>Carrito</h3>
-        </div>
-        <div class="principal-container shoppingCart-container" >
-        </div><p id="total"></p>
-        </div>
-    </div>
+
     
 </div>
 </div>

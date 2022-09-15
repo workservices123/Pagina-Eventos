@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    font-family:  sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    gap:10rem;
+}
+
+.imagen{
+    width: 70rem;
+    height: 58rem;
+    margin-left: -9rem;
+}
+
+h1{
+    margin-top:1rem;
+}
+
+.logo-person{
+    border-radius: 40px;
+    margin-left: 9.5rem;
+}
+
+.register-box {
+    width: 28rem;
+    height: 38rem;
+    background-color: #c5d7ff;
+    color: #000;
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 10px;
+}
+
+#fullName{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+}
+
+#userName{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+}
+
+#password{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+}
+
+#confirmPassword{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+}
+
+.myButton{
+    background-color: #487cfc;
+    color: #fff;
+}
+
+.register-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10%;
+    left: calc(50% - 50px);
+}
+
+.register-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.register-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+
+.register-box input {
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
+.register-box input[type="text"], .register-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #ffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffff;
+    font-size: 16px;
+}
+
+.register-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #ffff;
+    color: #000;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.register-box a {
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 20px;
+    color: darkgray;
+}
+
+.register-box a:hover {
+    color: #ffff;
+}

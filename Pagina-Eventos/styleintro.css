@@ -1,0 +1,43 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./img/Pagina-Intro\ \(1\).jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    color: #fff;
+}
+
+div{
+    margin-right: 3rem;
+    font: caption;
+    padding: 2rem;
+    
+}
+
+div h1{
+    font-size: 6rem;
+    margin-top: 2rem;
+}
+
+div p{
+    font-size: 1.6rem;
+}
+
+div button{
+    margin-top: 2rem;
+    margin-left: 13.5rem;
+    background-color: blueviolet;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 10px;
+    color: #fff;
+    font: caption;
+}
+
