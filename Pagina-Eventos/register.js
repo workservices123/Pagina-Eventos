@@ -1,59 +1,60 @@
-const frmLogin = document.getElementById("frm-register");
-const fullName = document.getElementById("fullName");
-const userName = document.getElementById("userName");
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
+        // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+          import { getAuth, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+          import { getDatabase, set, ref , update} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+          const firebaseConfig = {
+            apiKey: "AIzaSyC5b9YZ525VgxChtH0WBgdmuI9jpF4t8v0",
+            authDomain: "login-eventos-5e0c0.firebaseapp.com",
+            databaseURL: "https://login-eventos-5e0c0-default-rtdb.firebaseio.com",
+            projectId: "login-eventos-5e0c0",
+            storageBucket: "login-eventos-5e0c0.appspot.com",
+            messagingSenderId: "713108752407",
+            appId: "1:713108752407:web:27d3a2a04dcb183fb73452"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth();
+      const database = getDatabase(app);
 
-const userRegistered = [];
-let id = 0;
 
-frmLogin.addEventListener("submit", registerUser);
+       const boton = document.getElementById('btn-register')
 
-// El event previene los eventos precargados
-function registerUser(event){
+       boton.addEventListener('click', register)
 
-    // Por aqui se va a registrar el usuario
-    event.preventDefault();
-    // Esto agrega automaticamente un ID
-    id++;
-    // Esto crea el usuario objeto
-    const user = {
-        id: id,
-        nameFull: fullName.value,
-        user: userName.value,
-        pass: password.value,
-        confPassword: confirmPassword.value
-    };
-    // Validar que los campos no esten vacios
-    if (
-        fullName.value === "" ||
-        userName.value === "" ||
-        password.value === "" ||
-        confirmPassword.value === ""
-        ) {
-            alert("Por favor llene todos los campos");
+      function register(){
+      const fullName = document.getElementById("fullName").value
+      const userName = document.getElementById("userName").value
+      const email = document.getElementById('email').value
+      const password = document.getElementById('password').value
+
+          createUserWithEmailAndPassword(auth, email, password, fullName, userName)
+          .then((userCredential) => {
+       // Signed in
+          const user = userCredential.user;
+          // ...
+          set(ref(database, 'users/' + user.uid), {
+              email: email,
+              password : password,
+              fullName : fullName,
+              userName : userName
+          })
+            .then(() => {
+          // Data saved successfully!
+            alert('ok')
+            })
+            .catch((error) => {
+            // The write failed...
+            alert(error)
+            });
+          })
+          .catch((error) => {
+
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorCode)
+
+          })
         }
-        // Rectifica que las contraseñas coincidan
-    else if (password.value !== confirmPassword.value) {
-        alert("Las contraseñas no coinciden");
-    }
-        // revisa que el usuario no exista
-    else if (userRegistered.find(user => user.user === userName.value)) {
-        alert("Este usuario ya existe");
-    }
-
-    else {
-        // Agregar usuario
-        userRegistered.push(user);
-        // Guarda el array en el localStorage
-        localStorage.setItem("user", JSON.stringify(userRegistered));
-        alert("El usuario se ha registrado correctamente");
-        // Despues de agregar todo al array limpia los campos del registro
-        fullName.value = "";
-        userName.value = "";
-        password.value = "";
-        confirmPassword.value = "";
-
-        window.location.href = "/indexLogin.html";
-    }
-}

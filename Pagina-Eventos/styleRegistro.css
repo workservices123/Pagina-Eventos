@@ -58,6 +58,12 @@ h1{
     color:rgb(164, 164, 164);
 }
 
+#email{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+}
+
 #confirmPassword{
     background-color: #fff;
     border-radius: 15px;
