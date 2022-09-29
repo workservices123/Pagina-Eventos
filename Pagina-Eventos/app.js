@@ -55,7 +55,6 @@ window.addEventListener('DOMContentLoaded', async ()=> {
         btnAdd.addEventListener('click', inscibir)
         btnAdd.classList.add('btn-add')
 
-        console.log(doc.id);
         const btnDelete = document.createElement('button')
         btnDelete.setAttribute('data-id',doc.id)
         btnDelete.textContent = 'Eliminar'
@@ -106,17 +105,38 @@ window.addEventListener('DOMContentLoaded', async ()=> {
         contactoCard.textContent = 'Contacto: ' + task.contacto
     
         const tiempo = document.createElement('p')
-        tiempo.textContent = x
-    
-        setInterval(()=>{
-            
+        tiempo.setAttribute('data-id',doc.id)
+        tiempo.classList.add('time-Delete')
 
+        card.appendChild(imgCard)
+        card.appendChild(nombreCard)
+        card.appendChild(lugarCard)
+        card.appendChild(fechaCard)
+        card.appendChild(personasCard)
+        card.appendChild(descripcionCard)
+        card.appendChild(contactoCard)
+        card.appendChild(tiempo)
+        card.appendChild(btnAdd)
+        card.appendChild(btnDelete)
+        container.appendChild(card)
+
+let mesRes = 0
+let diaRes = 0
+let horaRes = 0
+let minutosRes = 0
+let mes1 = 0
+let dia1 = 0
+let hora1 = 0
+let minutos1 = 0
+let n = 0
+
+        setInterval(()=>{
             let fechaFinal = task.fecha
-            let mesRes = Number(fechaFinal[5]+fechaFinal[6])
-            let diaRes = Number(fechaFinal[8]+fechaFinal[9])
-            let horaRes = Number(fechaFinal[11]+fechaFinal[12])
-            let minutosRes = Number(fechaFinal[14]+fechaFinal[15])
-            
+            mesRes = Number(fechaFinal[5]+fechaFinal[6])
+            diaRes = Number(fechaFinal[8]+fechaFinal[9])
+            horaRes = Number(fechaFinal[11]+fechaFinal[12])
+            minutosRes = Number(fechaFinal[14]+fechaFinal[15])
+
             const time = new Date()
             const mes = (time.getMonth()+1)
             const dia = time.getDate()
@@ -124,10 +144,15 @@ window.addEventListener('DOMContentLoaded', async ()=> {
             const minutos = time.getMinutes()
             const seg = time.getSeconds()
 
+            mes1 = mes
+            dia1 = dia
+            hora1 = hora
+            minutos1 = minutos
+            
         let b = 0
         let c = 0
         let d = 0
-        let e = 60-Number(seg)
+        let e = 59-Number(seg)
     
         if(minutosRes>=minutos){
             d += (minutosRes-minutos)
@@ -167,41 +192,31 @@ window.addEventListener('DOMContentLoaded', async ()=> {
             d1 += String(d)
         }
         tiempo.textContent = String(b1+' - '+c1+' : '+d1+' : '+e)
-        if(Number(b1)>20){
-            tiempo.textContent = 'La fecha excede el limite de 20 dias'
+        if(Number(b1)>30){
+            tiempo.textContent = 'La fecha excede el limite de 30 dias'
         }
-        if((mesRes-mes)>=1){
-            tiempo.textContent = 'La fecha excede el limite de 20 dias'
-        }
-        if(mes>mesRes){
+        if(mes1>mesRes){
             tiempo.textContent = 'Ya paso la fecha'
-            if(dia>=diaRes){
-                if(hora>=horaRes){
-                    if(minutos>minutosRes){
+            if(n==0){
+                eliminar()
+            }
+            if(dia1>=diaRes){
+                if(hora1>=horaRes){
+                    if(minutos1>minutosRes){
                         tiempo.textContent = 'Ya paso la fecha'
+                        if(n==0){
+                            eliminar()
+                        }
                     }
                 }
             }
         }
-        if(tiempo.textContent == String('0'+' - '+'00'+' : '+'00'+' : '+'1')){
-            setTimeout(() => {
-                tiempo.textContent = "Es HOY!!! Es HOY!!!"
-            }, 1000);
-        }
-        
     },1000)
-            tiempo.textContent = ("Tiempo restante: "+tiempo.textContent)
-        card.appendChild(imgCard)
-        card.appendChild(nombreCard)
-        card.appendChild(lugarCard)
-        card.appendChild(fechaCard)
-        card.appendChild(personasCard)
-        card.appendChild(descripcionCard)
-        card.appendChild(contactoCard)
-        card.appendChild(tiempo)
-        card.appendChild(btnAdd)
-        card.appendChild(btnDelete)
-        container.appendChild(card)
+
+            function eliminar(){
+                n=1
+                    container.removeChild(card)
+            }
 
         const borrar = document.querySelectorAll('.btn-delete')
         borrar.forEach(boton=>{
@@ -249,6 +264,5 @@ function showModal() {
 }
 
 function removeModal(){
-
     modal.style.display = 'none'
 }

@@ -313,6 +313,14 @@ button:hover{
     padding: 1rem;
     background-color: #c5d7ff;
 }
+.card-product2 {
+    width: 30%;
+    height: 40rem;
+    border-radius: 5px;
+    margin: 2rem;
+    padding: 1rem;
+    background-color: #2a6af5;
+}
 
 .img-product {
     width: 100%;
@@ -320,7 +328,7 @@ button:hover{
     border-radius: 15px;
 }
 p{
-    font-size: 1rem;
+    font-size: 10px;
     color: #f4f4f4;
 }
 
