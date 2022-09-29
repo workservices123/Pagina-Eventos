@@ -11,20 +11,48 @@ function loginUser(event) {
     const validateUser = JSON.parse(getLocal);
     // Valida que los campos no esten vacios
     if (userName.value === "" || password.value === "") {
-        alert ("Tienes que llenar todos los campos");
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Tienes que ingresar todos los campos',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
     }
     // Valida que el usuario si exista
     else if (!validateUser.find(user => user.user === userName.value)) {
-        alert ('El usuario no existe');
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'El usuario no existe',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
     }
     // Valida que la contraseña coincida
     else if (
         validateUser.find(user => user.user === userName.value).pass !== pass.value) {
-            alert('La contraseña no coincide');
+            Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'La contraseña no coincide',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+              })
         }
     else {
-        alert ('usuario logueado con éxito');
-        window.location.href = "/indexCarrito.html";
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Haz sido logueado',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
+        window.location.href = "index.html";
     }
     
 }
