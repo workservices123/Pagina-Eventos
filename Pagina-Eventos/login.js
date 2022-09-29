@@ -56,3 +56,22 @@ function loginUser(event) {
     }
     
 }
+
+// dark-mode
+
+const body = document.getElementById('body')
+const cajaLogin = document.querySelector('.login-box')
+
+let negro = localStorage.getItem('dark-mode')
+
+window.addEventListener('load',()=>{
+    if(negro === "Activado"){
+        body.style.background = '#1F1F1D'
+        cajaLogin.style.background = '#1F1F1D'
+        cajaLogin.style.border = '1px solid white'
+    }else if(negro === "Desactivado"){
+        body.style.background = '#fff'
+        cajaLogin.style.background = '#c5d7ff'
+        cajaLogin.style.border = 'none'
+    }
+})

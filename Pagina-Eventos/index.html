@@ -15,57 +15,183 @@
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header>
-        <div id="logo">
-        </div>
-        <!-- <h1>Eventos.com</h1> -->
-        <!-- <img src="/images/calendario.png" alt="logo" class="logo"> -->
-        <!-- <p id="p-conter">0</p> -->
-    </header>
-    <div class="padre-anuncios"></div>
-    <nav class="nav1">
-        <!-- <i><a href="indexLogin.html"><img  src="https://res.cloudinary.com/dasuy0gun/image/upload/v1658781217/imagenes%20carrito%20de%20compras/btnSalir_rgvmx5.png" alt=""></a></i> -->
-        <i><a href="indexPrincipal.html"><img  src="https://res.cloudinary.com/dasuy0gun/image/upload/v1658781216/imagenes%20carrito%20de%20compras/btnInicio_xes8sc.png" alt=""></a></i>
-    </nav>
-    
-    <div class="anuncios">
-    <div class="container-products">
-        <div class="modal"> 
-            <button id="close-modal">X</button>
-            <input type="text" id="contacto" placeholder="Contacto">
-            <input type="text" id="Descripcion" placeholder="Descripcion">
-            <input type="datetime-local" id="Fecha" placeholder="Fecha">
-            <input type="file" id="new-image" >
-            <input type="text" id="Lugar" placeholder="Lugar">
-            <input type="text" id="nombre" placeholder="nombre">
-            <input type="Number" id="Npersonas" placeholder="Numero de personas">
-            <button id="btn-new-create">create new object</button>
-        </div>
-        <!-- este select se debe renderizar por javaScript consumiendo el objeto -->
-        <select name="products" id="select-products">
-            <option value="">SELECT ONE OPTION</option>
-        </select>
 
+    <!-- header -->
+    
+    <div id="capaSesion">
+		<div id="modalSesion">
+
+			<div id="modalContenido1">
+				<h3>¿Desea cerrar sesión?</h3>
+			</div>
+
+			<div id="modalContenido2">
+				<button id="buttonModal" class="btn btn--1">Cancelar</button>
+				<button id="buttonModalCerrar" class="btn btn--1">Cerrar Sesión</button>
+			</div>
+		</div>
+	</div>
+
+	<header id="header">
+		<section id="container_header">
+
+		  <div id="containerMenu">
+			  <div id="menu">
+				<div class="btn-menu">
+					<label id="barras" for="btn-menu">☰</label>
+				</div>
+			  </div>
+		  </div>
+
+		  <div id="logoHead">
+			<a href="/Pagina-Eventos/indexPrincipal.html"><img src="https://res.cloudinary.com/dasuy0gun/image/upload/v1664480508/Conciertos/logoEventos_oa0prp.png" alt=""></a>
+		  </div>
+	
+		  <ul id="contLista">
+			<li id="li"><a href="/Pagina-Eventos/indexRegistro.html"><button id="btnHead" class="btn btn--1">REGISTRARSE</button></a></li>
+			<li id="li"><a href="/Pagina-Eventos/indexLogin.html"><button id="btnHead2" class="btn btn--2">LOG IN</button></a></li>
+			<li><button id="buttonUser"><i id="user" class="fa-solid fa-user"></i></button> </li>
+		  </ul>
+
+	  </section>
+		
+  </header>
+	
+<!--	--------------->
+<div class="capa"></div>
+<input type="checkbox" id="btn-menu">
+
+<div class="container-menu">
+	<div class="cont-menu">
+		<nav class="navMenu">
+			<a class="textoMenu" href="#">Portafolio</a>
+			<a class="textoMenu" href="#">Servicios</a>
+			<a class="textoMenu" href="#">Suscribirse</a>
+			<a class="textoMenu" href="#">Facebook</a>
+			<a class="textoMenu" href="#">Youtube</a>
+			<a class="textoMenu" href="#">Instagram</a>
+		</nav>
+		<label class="btnX" for="btn-menu">✖️</label>
+
+        <div id="containerChange">
+            <p>Modo Oscuro:</p>
+			<button id="btnMode">Activar</button>
+            
+        </div>
+		
+	</div>
+	
+</div>
+
+    <!-- contenedor principal -->
+    
+    <div class="padre-anuncios"></div>
+    <div class="anuncios">
+        <div class="container-products">
+            <div class="modal"> 
+                <button id="close-modal">X</button>
+                <input type="text" id="contacto" placeholder="Contacto">
+                <input type="text" id="Descripcion" placeholder="Descripcion">
+                <input type="datetime-local" id="Fecha" placeholder="Fecha">
+                <input type="file" id="new-image" >
+                <input type="text" id="Lugar" placeholder="Lugar">
+                <input type="text" id="nombre" placeholder="nombre">
+                <input type="Number" id="Npersonas" placeholder="Numero de personas">
+                <button id="btn-new-create">create new object</button>
+            </div>
+            <!-- este select se debe renderizar por javaScript consumiendo el objeto -->
+            <select name="products" id="select-products">
+                <option value="">SELECT ONE OPTION</option>
+            </select>
+    
+            
+            <button id="btn-create">Create new product</button>
+        </div>
         
-        <button id="btn-create">Create new product</button>
+        <main id="container-cards"></main>
+        <div class="overlay " id="overlay">
+            <div class="popup" id="popup">
+            <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
+            <div class="shoppingCart">
+                <!-- <i class="fas fa-shopping-cart"></i> -->
+                <h3>Carrito</h3>
+            </div>
+            <div class="principal-container shoppingCart-container" >
+            </div><p id="total"></p>
+            </div>
+        </div>
+        
     </div>
     
-    <main id="container-cards"></main>
-    <div class="overlay " id="overlay">
-        <div class="popup" id="popup">
-        <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
-        <div class="shoppingCart">
-            <!-- <i class="fas fa-shopping-cart"></i> -->
-            <h3>Carrito</h3>
-        </div>
-        <div class="principal-container shoppingCart-container" >
-        </div><p id="total"></p>
-        </div>
     </div>
-    
-</div>
-</div>
+
+<footer id="footer">
+	<nav>
+		<ul id="ul-1">
+			<li>Siguenos en:</li>
+			<li>Categorias:</li>
+			<li>Menú:</li>
+		</ul>
+
+		<ul id="ulFooter">
+			<li>
+				<div class="divFooter">
+					<div id="containerIcons">
+						<i id="icons" class="fa-brands fa-instagram"></i>
+					</div>
+					
+					<p class="p">Instagram</p> 
+				</div>
+				<div class="divFooter">
+					<div id="containerIcons">
+						<i id="icons" class="fa-brands fa-youtube"></i>
+					</div>
+					
+					<p class="p">Youtube</p>
+				</div class="divFooter">
+				
+				<div class="divFooter">
+					<div id="containerIcons">
+						<i id="icons" class="fa-brands fa-twitter"></i>
+					</div>
+					
+					<p class="p">Twitter</p>
+				</div>
+
+				<div class="divFooter">
+					<div id="containerIcons">
+						<i id="icons" class="fa-brands fa-facebook"></i>
+					</div>
+					
+					<p class="p">Facebook</p>
+				</div>
+				
+			</li>
+			<li id="order">
+				<p class="p">Conciertos</p> 
+				<p class="p">Teatro</p>
+				<p class="p">Deportes</p>
+				<p class="p">Familia</p> 
+				<p class="p">Festival</p>
+				<p class="p">Otros</p>
+			</li>
+			<li id="order"><p class="p">Contáctenos</p> 
+				<p class="p">Puntos de venta</p>
+				<p class="p">Asistencia</p>
+				<p class="p">Ventas</p>
+				<p class="p">Términos de uso</p>
+				<p class="p">Politica de privacidad</p>
+			</li>
+			
+		</ul>
+	</nav>
+	<section id="section-footer">
+		<p id="p-footer1">© 2022 all rights reserved by Eventos.</p>
+		<p id="p-footer2">EventosCom@gmail.com</p>
+	</section>
+</footer>
+
+
     <script src="app.js" type="module"></script>
     <!-- <script src="products.js"></script> -->
     <!-- <script src="firebase.js" type="module"></script> -->
