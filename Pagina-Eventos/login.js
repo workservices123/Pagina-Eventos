@@ -52,7 +52,7 @@ function loginUser(event) {
             timer: 1500,
             timerProgressBar: true
           })
-        window.location.href = "indexCarrito.html";
+        window.location.href = "index.html";
     }
     
 }

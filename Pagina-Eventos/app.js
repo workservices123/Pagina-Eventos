@@ -68,15 +68,23 @@ window.addEventListener('DOMContentLoaded', async ()=> {
                 btnAdd.textContent='Inscribete'
                 personasCard.textContent = personas+cantidad_personas
             }else{
-                let nomx = prompt('¿Quiere reservar una inscipcion?')
-                if(nomx==='si'){
-                    cantidad_personas--
-                    btnAdd.textContent='Cancelar'
-                    personasCard.textContent = personas+cantidad_personas
-                }else{
-                    alert('pendejo')
-                    z--
-                }
+                Swal.fire({
+                    title: '¿Te quieres inscribir?',
+                    text: "",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: '¡Inscribeme!'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      Swal.fire(
+                        '¡Inscrito!',
+                        'Ya haces parte de este evento',
+                        'success'
+                      )
+                    }
+                  })
             }
         }
         let x = ''
