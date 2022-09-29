@@ -40,16 +40,37 @@
             })
             .then(() => {
             // Data saved successfully!
-            alert('ok, logged')
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Iniciaste sesion correctamente',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+              })
+              .then(()=>{
+                window.location.href = "indexPrincipal.html";
+              })
             })
-            .catch((error) => {
-            // The write failed...
-            alert(error)
-            });
+            .catch((error)=>{
+                Swal.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Los datos son invalidos, vuelva a ingresarlos',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+              })
+              })
         })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorMessage)
-        })
+        .catch((error)=>{
+            Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Los datos son invalidos, vuelva a ingresarlos',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
+          })
     }

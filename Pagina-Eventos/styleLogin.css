@@ -57,6 +57,15 @@ h1{
     color:rgb(164, 164, 164);
 }
 
+#email{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+    border-style: none;
+    height: 40px ;
+    font-size: 16px;
+}
+
 
 
 .login-box h1 {
@@ -90,7 +99,7 @@ h1{
     border-color: aqua;
 }
 
-.login-box input[type="submit"] {
+.login-box input[type="button"] {
     border: none;
     outline: none;
     height: 40px;

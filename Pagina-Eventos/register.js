@@ -43,18 +43,39 @@
           })
             .then(() => {
           // Data saved successfully!
-            alert('ok')
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Te has registrado correctamente',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
+          .then(()=>{
+            window.location.href = "indexLogin.html";
+          })
             })
             .catch((error) => {
             // The write failed...
-            alert(error)
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Los campos registrados son invalidos, intentelo nuevamente',
+              showConfirmButton: false,
+              timer: 1500,
+              timerProgressBar: true
+            })
             });
           })
-          .catch((error) => {
-
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          alert(errorCode)
-
+          .catch((error)=>{
+            Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Los campos registrados son invalidos, intentelo nuevamente',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
           })
+          })
+
         }
