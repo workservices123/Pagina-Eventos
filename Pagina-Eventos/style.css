@@ -836,23 +836,23 @@ p{
 
 #footer{
     width: 100%;
-    height: 350px;
+    height: 450px;
     background: #407aff;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     border-top: 1px solid white;
-    margin-top: 10rem;
-    }
-    
-    nav{
+}
+
+nav{
     display: flex;
     background-color: transparent;
     height: 78%;
     width: 82%;
     justify-content: center;
     flex-direction: column;
+    margin-top: 1rem;
     }
     
     nav ul {

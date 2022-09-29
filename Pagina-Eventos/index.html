@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>  <!-- escript del framework de alertas -->
 </head>
 <body>
 
@@ -44,12 +45,12 @@
 		  </div>
 
 		  <div id="logoHead">
-			<a href="/Pagina-Eventos/indexPrincipal.html"><img src="https://res.cloudinary.com/dasuy0gun/image/upload/v1664480508/Conciertos/logoEventos_oa0prp.png" alt=""></a>
+			<a href="indexPrincipal.html"><img src="https://res.cloudinary.com/dasuy0gun/image/upload/v1664480508/Conciertos/logoEventos_oa0prp.png" alt=""></a>
 		  </div>
 	
 		  <ul id="contLista">
-			<li id="li"><a href="/Pagina-Eventos/indexRegistro.html"><button id="btnHead" class="btn btn--1">REGISTRARSE</button></a></li>
-			<li id="li"><a href="/Pagina-Eventos/indexLogin.html"><button id="btnHead2" class="btn btn--2">LOG IN</button></a></li>
+			<li id="li"><a href="indexRegistro.html"><button id="btnHead" class="btn btn--1">REGISTRARSE</button></a></li>
+			<li id="li"><a href="indexLogin.html"><button id="btnHead2" class="btn btn--2">LOG IN</button></a></li>
 			<li><button id="buttonUser"><i id="user" class="fa-solid fa-user"></i></button> </li>
 		  </ul>
 
@@ -109,21 +110,7 @@
         </div>
         
         <main id="container-cards"></main>
-        <div class="overlay " id="overlay">
-            <div class="popup" id="popup">
-            <a href="#" id="btn-close-popup" class="btn-close-popup"><i class="fas fa-times"></i></a>
-            <div class="shoppingCart">
-                <!-- <i class="fas fa-shopping-cart"></i> -->
-                <h3>Carrito</h3>
-            </div>
-            <div class="principal-container shoppingCart-container" >
-            </div><p id="total"></p>
-            </div>
-        </div>
-        
-    </div>
-    
-    </div>
+<!-- footer  -->
 
 <footer id="footer">
 	<nav>
@@ -190,8 +177,6 @@
 		<p id="p-footer2">EventosCom@gmail.com</p>
 	</section>
 </footer>
-
-
     <script src="app.js" type="module"></script>
     <!-- <script src="products.js"></script> -->
     <!-- <script src="firebase.js" type="module"></script> -->
