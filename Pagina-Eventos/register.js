@@ -31,15 +31,36 @@ function registerUser(event){
         password.value === "" ||
         confirmPassword.value === ""
         ) {
-            alert("Por favor llene todos los campos");
+            Swal.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'Por favor llene todos los campos',
+                showConfirmButton: false,
+                timer: 1500,
+                timerProgressBar: true
+              })
         }
         // Rectifica que las contraseñas coincidan
     else if (password.value !== confirmPassword.value) {
-        alert("Las contraseñas no coinciden");
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'Las contraseñas no coinciden',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
     }
         // revisa que el usuario no exista
     else if (userRegistered.find(user => user.user === userName.value)) {
-        alert("Este usuario ya existe");
+        Swal.fire({
+            position: 'center',
+            icon: 'warning',
+            title: 'El usuario ya existe',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
     }
 
     else {
@@ -47,13 +68,20 @@ function registerUser(event){
         userRegistered.push(user);
         // Guarda el array en el localStorage
         localStorage.setItem("user", JSON.stringify(userRegistered));
-        alert("El usuario se ha registrado correctamente");
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Te has registrado correctamente',
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true
+          })
         // Despues de agregar todo al array limpia los campos del registro
         fullName.value = "";
         userName.value = "";
         password.value = "";
         confirmPassword.value = "";
 
-        window.location.href = "/indexLogin.html";
+        window.location.href = "indexLogin.html";
     }
 }
