@@ -573,14 +573,16 @@ h2 {
 
   
 button {
-    width: 50%;
+    width: 100%;
     height: 2rem;
-    background: #967300;
+    background-color:rgba(64,123,255,255);
+    color: white; 
     border:0px;
-    color: #ffffff;  
+    font-size: 1.5rem;
     cursor: pointer;  
-    border-radius: 15px;
-    justify-content:flex-end
+    border-radius: 5px;
+    margin-top: -3rem;
+    margin-left: -0rem;
 }
   
 button:hover{
@@ -595,12 +597,16 @@ button:hover{
 
 
 .card-product {
-    width: 30%;
-    height: 40rem;
+    width: 20%;
+    height: auto;
     border-radius: 5px;
     margin: 2rem;
     padding: 1rem;
-    background-color: #c5d7ff;
+    background-color: rgba(0, 0, 0, 0.658);
+    border: 2px solid white;
+    box-shadow: 0 5px 10px black;
+    display:flex;
+    flex-direction: column;
 }
 .card-product2 {
     width: 30%;
@@ -611,10 +617,12 @@ button:hover{
     background-color: #2a6af5;
 }
 
+
+
 .img-product {
     width: 100%;
-    height: 60%;
-    border-radius: 15px;
+    height: 38%;
+    border-radius: 5px;
 }
 p{
     font-size: 10px;
@@ -625,37 +633,36 @@ p{
     width: auto;
     display: flex;
     margin-top: 0.5rem;
-    color: #000000;
-    font-size: 1.5rem;
+    color: #fff;
+    font-family: Roboto, sans-serif;
+    font-size: 2rem;
     font-weight: 550;
     justify-content: center;
 }
 
 .price-product {
-    /* font-family: 'Macondo', cursive; */
+    font-family: Roboto, sans-serif;
     font-weight: 600;
     color: #000000;
 }
 
 .btn-add {
-    width: 8rem;
-    height: 1.5rem;
-    border-radius: 55px;
+    width: 100%;
+    height: 2rem;
+    border-radius: 5px;
     background-color:rgba(64,123,255,255);
     color: white;
-    font-size: 1rem;
-    margin: 5px;
-    margin-left: 14rem;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-left: -0rem;
     margin-bottom: 5rem;
-    margin-top: 1%;
 }
 
 .btn-add:hover,
 .btn-add:focus {
     cursor: pointer;
-    background-color: #000000;
-    font-weight: 900;
-    color: #ffffff;
+    background-color: #fff;
+    color: #000;
 }
 
 .modal {
@@ -717,6 +724,12 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+p{
+    font-family: Roboto, sans-serif;
+    margin-top:0.3rem;
+    font-size: 1.2rem;
 }
 
 #btn-create{
