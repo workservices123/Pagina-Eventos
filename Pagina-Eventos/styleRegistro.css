@@ -32,7 +32,7 @@ h1{
 
 .register-box {
     width: 28rem;
-    height: 38rem;
+    height: 40rem;
     background-color: #c5d7ff;
     color: #000;
     box-sizing: border-box;
@@ -125,6 +125,15 @@ h1{
     color:rgb(164, 164, 164);
 }
 
+#email{
+    background-color: #fff;
+    border-radius: 15px;
+    color:rgb(164, 164, 164);
+    border-style: none;
+    height: 40px ;
+    font-size: 16px;
+}
+
 #confirmPassword{
     background-color: #fff;
     border-radius: 15px;
@@ -175,12 +184,12 @@ h1{
     font-size: 16px;
 }
 
-.register-box input[type="submit"] {
+.register-box input[type="button"] {
     border: none;
     outline: none;
     height: 40px;
-    background: #ffff;
-    color: #000;
+    background: #5884ff;
+    color: #fff;
     font-size: 18px;
     border-radius: 20px;
 }
