@@ -409,8 +409,7 @@ function off(){
 
     main.style.background = '#c5d7ff'
     main2.style.background = '#c5d7ff'
-    main.style.transition ='all 1000ms ease'
-    main2.style.transition ='all 1000ms ease'
+    
 
     menu.style.background = '#407aff'
     menu.style.transition = 'all 1000ms ease'
