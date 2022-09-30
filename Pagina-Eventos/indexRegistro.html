@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styleRegistro.css">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dasuy0gun/image/upload/v1664480508/Conciertos/logoEventos_oa0prp.png" type="image/x-icon">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>  <!-- escript del framework de alertas -->
     <title>Registro</title>
 </head>
@@ -16,7 +17,7 @@
         <img src="./img/sign-up-animate.svg" alt="" class="imagen">
         <div class="register-box">
             <img src="img/inm-login.png" alt="" class="logo-person">
-            <h1>Registrate aqui</h1>
+            <h1 class="colorLetra">Registrate aqui</h1>
 
             <nav>
                 <a href="indexPagina.html">Inicio</a>
@@ -26,18 +27,18 @@
             <main>
                 <form id="frm-register" action="">
                     <!-- Nombre completo -->
-                    <label for="fullName">Nombre completo</label>
+                    <label for="fullName" class="colorLetra"><p>Nombre completo</p> </label>
                     <input id="fullName" type="text" placeholder="Ingresa tu nombre completo" value="">
                 
                     <!-- Nombre de usuario -->
-                    <label for="UseName">Nombre de usuario</label>
+                    <label for="UseName" class="colorLetra">Nombre de usuario</label>
                     <input id="userName" type="text" placeholder="Ingresa tu nombre de usuario" value="">
                     
-                    <label for="email">Correo</label>
+                    <label for="email" class="colorLetra">Correo</label>
                     <input id="email" type="email" placeholder="Ingresa tu email" value="">
                     
                     <!-- Contraseña -->
-                    <label for="password">Crea una contraseña</label>
+                    <label for="password" class="colorLetra">Crea una contraseña</label>
                     <input id="password" type="password" placeholder="Ingresa tu contraseña" value="">
                     <!-- <input id="confirmPassword" type="password" placeholder="confirma tu contraseña" value=""> -->
 
@@ -49,7 +50,7 @@
                 </form>
             </main>
         </div>
-        <script src="/register.js" type="module"></script>
+        <script src="/Pagina-Eventos/register.js" type="module"></script>
     </header>
 </body>
 </html>

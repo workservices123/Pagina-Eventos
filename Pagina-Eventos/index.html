@@ -7,13 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="shortcut icon" href="img/REAL STATE SERVICES.png" type="image/x-icon"> -->
-    <title>Shop</title>
+    <title>Tienda</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="shortcut icon" href="https://res.cloudinary.com/dasuy0gun/image/upload/v1664480508/Conciertos/logoEventos_oa0prp.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>  <!-- escript del framework de alertas -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -88,25 +89,31 @@
     
     <div class="padre-anuncios"></div>
     <div class="anuncios">
+
+		
         <div class="container-products">
+			
+			
             <div class="modal"> 
-                <button id="close-modal">X</button>
+
+				<div id="headModal">
+					<div id="headModalX">
+						<button id="close-modal">✖️</button>
+					</div>
+					
+				</div>
+                
+                <input type="text" id="nombre" placeholder="Nombre del evento">
+				<input type="text" id="Lugar" placeholder="Lugar">
                 <input type="text" id="contacto" placeholder="Contacto">
-                <input type="text" id="Descripcion" placeholder="Descripcion">
-                <input type="datetime-local" id="Fecha" placeholder="Fecha">
-                <input type="file" id="new-image" >
-                <input type="text" id="Lugar" placeholder="Lugar">
-                <input type="text" id="nombre" placeholder="nombre">
-                <input type="Number" id="Npersonas" placeholder="Numero de personas">
-                <button id="btn-new-create">create new object</button>
+                <input type="text" id="Descripcion" placeholder="Descripcion">            
+                <input type="Number" id="Npersonas" placeholder="Cantidad de personas">
+                <input type="datetime-local" id="Fecha" placeholder="Fecha">  
+				<input type="file" class="file-select" id="new-image">
+                <button id="btn-new-create">Crear Anuncio</button>
             </div>
             <!-- este select se debe renderizar por javaScript consumiendo el objeto -->
-            <select name="products" id="select-products">
-                <option value="">SELECT ONE OPTION</option>
-            </select>
-    
-            
-            <button id="btn-create">Create new product</button>
+            <button id="btn-create">Crear Anuncio</button>
         </div>
         
         <main id="container-cards"></main>

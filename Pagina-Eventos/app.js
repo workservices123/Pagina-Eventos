@@ -63,9 +63,28 @@ window.addEventListener('DOMContentLoaded', async ()=> {
         function inscibir() {
             z++
             if((z%2)==0){
-                cantidad_personas++
-                btnAdd.textContent='Inscribete'
-                personasCard.textContent = personas+cantidad_personas
+                Swal.fire({
+                    title: '¿Quieres cancelar la inscripcion?',
+                    text: "",
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Eliminar Inscripcion'
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                        cantidad_personas++
+                        btnAdd.textContent='Inscribete'
+                        personasCard.textContent = "Cantidad de personas: "+Number(personas+cantidad_personas)
+                      Swal.fire(
+                        '¡Cancelado',
+                        'Ya no haces parte de este evento',
+                        'success'
+                      )
+                    }else{
+                        z--
+                    }
+                  })
             }else{
                 Swal.fire({
                     title: '¿Te quieres inscribir?',
@@ -77,15 +96,22 @@ window.addEventListener('DOMContentLoaded', async ()=> {
                     confirmButtonText: '¡Inscribeme!'
                   }).then((result) => {
                     if (result.isConfirmed) {
-                      Swal.fire(
+                        cantidad_personas--
+                btnAdd.textContent = 'Cancelar'
+                personasCard.textContent = "Cantidad de personas: "+Number(personas+cantidad_personas)
+                    Swal.fire(
                         '¡Inscrito!',
                         'Ya haces parte de este evento',
                         'success'
                       )
+                    }else{
+                        z--
                     }
+                    
                   })
-            }
+            }                
         }
+        
         let x = ''
         let fechaFinal1 = task.fecha
         let mesRes1 = Number(fechaFinal1[5]+fechaFinal1[6])
@@ -295,6 +321,9 @@ const main2 = document.getElementById('container-cards')
 const capaMenu = document.querySelector('.capa')
 const btnX = document.querySelector('.btnX')
 
+
+
+
 barras.addEventListener('click',()=>{
     menu.style.position = 'fixed'
     capaMenu.style.display = 'flex'
@@ -373,6 +402,16 @@ else if(Mode === "Desactivado"){
 
 function on() {
 
+    btnCreate.style.background = 'none'
+    btnCreate.style.border = '1px solid white'
+    btnCreate.style.transition = 'all 1000ms ease' 
+
+    modal.style.background = '#1F1F1D'
+
+    btnNewProduct.style.background = 'none'
+    btnNewProduct.style.border = '1px solid white'
+    btnNewProduct.style.transition = 'all 1000ms ease'
+
     modalSesion.style.background = '#1F1F1D'
 
     header.style.background = '#1F1F1D'
@@ -400,6 +439,16 @@ function on() {
 }
 
 function off(){
+
+    btnCreate.style.background = '#407aff'
+    btnCreate.style.border = 'none'
+    btnCreate.style.transition = 'all 1000ms ease' 
+
+    btnNewProduct.style.background = '#407aff'
+    btnNewProduct.style.border = 'none'
+    btnNewProduct.style.transition = 'all 1000ms ease'
+
+    modal.style.background = '#c5d7ff'
 
     modalSesion.style.background = '#407aff'
 

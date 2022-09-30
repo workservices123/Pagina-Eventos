@@ -90,12 +90,14 @@ let negro = localStorage.getItem('dark-mode')
 window.addEventListener('load',()=>{
     if(negro === "Activado"){
         body.style.background = '#1F1F1D'
-        cajaRegistro.style.background = '#1F1F1D'
+        cajaRegistro.style.background = '#9e9e9e'
         cajaRegistro.style.border = '1px solid white'
+  
 
     }else if(negro === "Desactivado"){
         body.style.background = '#fff'
         cajaRegistro.style.background = '#c5d7ff'
         cajaRegistro.style.border = 'none'
+
     }
 })

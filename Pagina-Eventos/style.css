@@ -575,14 +575,13 @@ h2 {
 button {
     width: 100%;
     height: 2rem;
-    background-color:rgba(64,123,255,255);
     color: white; 
     border:0px;
     font-size: 1.5rem;
     cursor: pointer;  
     border-radius: 5px;
-    margin-top: -3rem;
     margin-left: -0rem;
+    background: #407aff;
 }
   
 button:hover{
@@ -665,17 +664,41 @@ p{
     color: #000;
 }
 
-.modal {
+#headModal{
+    display: flex;
+justify-content: center;
+align-items: center;
+    width: 100%;
+    height: 10%;
+    justify-content:right;
+    align-items: center;
+    background: transparent;
+}
 
+#headModalX{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 10%;
+height: 90%;
+background: transparent;
+margin-left: 1rem;
+}
+
+#headModalX button{
+    font-size: 25px;
+}
+
+.modal {
     width:25rem;
     height: 30rem;
-    border: groove black 2px;
+    border: 1px solid white;
     background-color: #c5d7ff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-around;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     display: none;
     margin-top: 20rem;
@@ -717,24 +740,25 @@ p{
 }
 
 #close-modal{
-    background-color: #000;
     border-radius: 10px;
     width: 20px;
     height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: none;
 }
 
 p{
     font-family: Roboto, sans-serif;
     margin-top:0.3rem;
     font-size: 1.2rem;
+    background: transparent;
 }
 
 #btn-create{
-    width: 10%;
-    height: 2rem;
+    width: 13.5%;
+    height: 3.5rem;
     background-color:rgba(64,123,255,255);
     border:0px;
     color: #ffffff;  
@@ -742,7 +766,16 @@ p{
     border-radius: 5px;
     margin: 10px;
     margin-top: 120px;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
+    background:#407aff;
+}
+
+#modalDark{
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.295);
+    position: fixed;
+    z-index: 100;
 }
 
 #select-products{
@@ -755,17 +788,9 @@ p{
     margin-top: 120px;
 }
 #btn-new-create{
-    background:#0071ce;
-    color: black;
-}
-
-
-#btn-create{
-    background:#0071ce;
-}
-
-.modal{
-    background-color: #c5d7ff;
+    background:#407aff;
+    color: white;
+    width: 60%;
 }
 
 #contacto{
@@ -863,6 +888,7 @@ nav{
     }
     
     nav ul li{
+    justify-content: space-around;
     text-align: center;
     margin-top: 1rem;
     display: flex;
@@ -933,3 +959,35 @@ nav{
     #order>p{
     text-align: center;
     }
+
+    .file-select {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+      }
+      
+      .file-select::before {
+        background-color: #407aff;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+        content: 'Seleccionar'; /* testo por defecto */
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
+      
+      .file-select input[type="file"] {
+        opacity: 0;
+        width: 200px;
+        height: 32px;
+        display: inline-block;
+      }
+      
+      #new-image::before {
+        content: 'Seleccionar Archivo 1';
+      }
